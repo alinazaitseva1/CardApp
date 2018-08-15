@@ -44,7 +44,7 @@
                                     <constraint firstAttribute="height" constant="30" id="TYe-I8-fiA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.39537013167657636" green="0.40626648502040419" blue="0.39407385262312089" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EXPIRE DATE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0N-Bx-zQQ">
@@ -53,7 +53,7 @@
                                     <constraint firstAttribute="height" constant="30" id="WO8-Yg-phz"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.39537013167657636" green="0.40626648502040419" blue="0.39407385262312089" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SECURITY CODE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XkO-OR-OBF">
@@ -62,7 +62,7 @@
                                     <constraint firstAttribute="height" constant="30" id="sU7-aP-Zs9"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.39537013167657636" green="0.40626648502040419" blue="0.39407385262312089" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kkg-fb-Rcu">
@@ -106,6 +106,9 @@
                                 <state key="normal" title="ADD CARD">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="pushedAddCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ibb-9b-RKd"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="***" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gwX-8b-H2u">
                                 <rect key="frame" x="193" y="369" width="150" height="50"/>
@@ -138,7 +141,7 @@
                             <constraint firstItem="kAz-Ju-Dvg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="3Uq-AG-kWW"/>
                             <constraint firstItem="FeU-FO-o5m" firstAttribute="top" secondItem="mct-Go-X23" secondAttribute="bottom" constant="20" id="6a0-6i-0dC"/>
                             <constraint firstItem="hm9-Ba-qYQ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="8ls-Nl-IsA"/>
-                            <constraint firstItem="XkO-OR-OBF" firstAttribute="leading" secondItem="J0N-Bx-zQQ" secondAttribute="trailing" constant="79" id="BzK-k8-fzt"/>
+                            <constraint firstItem="XkO-OR-OBF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="J0N-Bx-zQQ" secondAttribute="trailing" symbolic="YES" id="BzK-k8-fzt"/>
                             <constraint firstItem="iD2-bu-v5r" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="CR8-Wf-UcI"/>
                             <constraint firstItem="grq-El-NS7" firstAttribute="leading" secondItem="FeU-FO-o5m" secondAttribute="trailing" constant="5" id="Dc6-ky-zxV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iD2-bu-v5r" secondAttribute="trailing" constant="31" id="FIk-cn-0fD"/>
@@ -157,10 +160,20 @@
                             <constraint firstItem="mct-Go-X23" firstAttribute="top" secondItem="iD2-bu-v5r" secondAttribute="bottom" constant="25" id="utp-X5-Laa"/>
                             <constraint firstItem="XkO-OR-OBF" firstAttribute="top" secondItem="grq-El-NS7" secondAttribute="bottom" constant="20" id="vdI-RC-Rkz"/>
                             <constraint firstItem="jMh-kU-QYf" firstAttribute="leading" secondItem="grq-El-NS7" secondAttribute="trailing" constant="5" id="xBg-62-0vS"/>
+                            <constraint firstAttribute="trailing" secondItem="XkO-OR-OBF" secondAttribute="trailing" constant="81" id="zc8-OG-U8w"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="ts0-Bh-fvB"/>
+                    <connections>
+                        <outlet property="expireDate" destination="kAz-Ju-Dvg" id="ckR-hh-ca2"/>
+                        <outlet property="nameOnCard" destination="iD2-bu-v5r" id="dIv-3D-Q8S"/>
+                        <outlet property="securityCode" destination="gwX-8b-H2u" id="msV-nt-LQ2"/>
+                        <outletCollection property="cardNumber" destination="kkg-fb-Rcu" collectionClass="NSMutableArray" id="lF9-Mg-952"/>
+                        <outletCollection property="cardNumber" destination="FeU-FO-o5m" collectionClass="NSMutableArray" id="wGn-9Q-5xT"/>
+                        <outletCollection property="cardNumber" destination="grq-El-NS7" collectionClass="NSMutableArray" id="SDg-4n-sjc"/>
+                        <outletCollection property="cardNumber" destination="jMh-kU-QYf" collectionClass="NSMutableArray" id="RFA-73-tMd"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="752.79999999999995" y="800.14992503748135"/>

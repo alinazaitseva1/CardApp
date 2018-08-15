@@ -27,6 +27,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="editingTextField:" destination="BYZ-38-t0r" eventType="editingChanged" id="vvT-aN-Bwm"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="MM/YY" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kAz-Ju-Dvg">
                                 <rect key="frame" x="32" y="369" width="150" height="50"/>
@@ -37,6 +40,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="editingTextField:" destination="BYZ-38-t0r" eventType="editingChanged" id="ZKG-SI-gei"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CARD NUMBER" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mct-Go-X23">
                                 <rect key="frame" x="32" y="199" width="120" height="30"/>
@@ -74,6 +80,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="editingCardNumber:" destination="BYZ-38-t0r" eventType="editingChanged" id="I33-8R-E9y"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FeU-FO-o5m">
                                 <rect key="frame" x="112" y="249" width="75" height="50"/>
@@ -84,6 +93,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="editingCardNumber:" destination="BYZ-38-t0r" eventType="editingChanged" id="WRx-4M-x5f"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="grq-El-NS7">
                                 <rect key="frame" x="192" y="249" width="75" height="50"/>
@@ -94,6 +106,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="editingCardNumber:" destination="BYZ-38-t0r" eventType="editingChanged" id="Hs3-bg-2TY"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hm9-Ba-qYQ">
                                 <rect key="frame" x="143.5" y="452" width="88" height="40"/>
@@ -119,6 +134,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="editingTextField:" destination="BYZ-38-t0r" eventType="editingChanged" id="ibB-DK-whN"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jMh-kU-QYf">
                                 <rect key="frame" x="272" y="249" width="75" height="50"/>
@@ -131,6 +149,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="editingCardNumber:" destination="BYZ-38-t0r" eventType="editingChanged" id="EuW-M6-jFG"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -166,13 +187,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="ts0-Bh-fvB"/>
                     <connections>
-                        <outlet property="expireDate" destination="kAz-Ju-Dvg" id="ckR-hh-ca2"/>
-                        <outlet property="nameOnCard" destination="iD2-bu-v5r" id="dIv-3D-Q8S"/>
-                        <outlet property="securityCode" destination="gwX-8b-H2u" id="msV-nt-LQ2"/>
-                        <outletCollection property="cardNumber" destination="kkg-fb-Rcu" collectionClass="NSMutableArray" id="lF9-Mg-952"/>
-                        <outletCollection property="cardNumber" destination="FeU-FO-o5m" collectionClass="NSMutableArray" id="wGn-9Q-5xT"/>
-                        <outletCollection property="cardNumber" destination="grq-El-NS7" collectionClass="NSMutableArray" id="SDg-4n-sjc"/>
-                        <outletCollection property="cardNumber" destination="jMh-kU-QYf" collectionClass="NSMutableArray" id="RFA-73-tMd"/>
+                        <outlet property="expireDateTextField" destination="kAz-Ju-Dvg" id="ckR-hh-ca2"/>
+                        <outlet property="firstPartCardNumberTextField" destination="kkg-fb-Rcu" id="avs-ao-yPZ"/>
+                        <outlet property="fourthPartCardNumberTextField" destination="jMh-kU-QYf" id="oVW-Qj-gAH"/>
+                        <outlet property="nameOnCardTextField" destination="iD2-bu-v5r" id="dIv-3D-Q8S"/>
+                        <outlet property="secondPartCardNumberTextField" destination="FeU-FO-o5m" id="USp-eG-I9X"/>
+                        <outlet property="securityCodeTextField" destination="gwX-8b-H2u" id="msV-nt-LQ2"/>
+                        <outlet property="thirdPartCardNumberTextField" destination="grq-El-NS7" id="e40-wR-o3Y"/>
                     </connections>
                 </viewController>
             </objects>

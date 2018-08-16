@@ -18,7 +18,7 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     var cardNumber = ""
     var expireDate: String?
     var cvv: String?
-    
+    var isValid = false
     
     @IBOutlet weak var firstPartCardNumberTextField: UITextField!
     @IBOutlet weak var secondPartCardNumberTextField: UITextField!
@@ -27,20 +27,20 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     
     
     @IBAction func pushedAddCard(_ sender: UIButton) {
+        if isValid {
         guard let expireDate = expireDate, let cvv = cvv else { return }
         creditCard = CardEntity(
             name: name,
             cardNumber: cardNumber,
             expireDate: expireDate,
             cvv: cvv)
-        print(creditCard)
+        print(creditCard) // TODO: remove
         
-        let alert = UIAlertController(title: "Credit card", message: creditCard?.cardEntityRepresentation, preferredStyle: .alert)
-        
-        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
-        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
-        
-        self.present(alert, animated: true)
+        self.showAlert(title: "Credit card", message: (creditCard?.cardEntityRepresentation)!)
+        } else {
+            self.showAlert(title: "Error", message: TypeError.dataIsAbsent.localizedDescription)
+        }
+    
     }
     
     fileprivate func setCardTextFieldsDisabled() {
@@ -62,7 +62,6 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         super.viewDidLoad()
         setCardTextFieldsDisabled()
         setTextFieldsDelegate()
-        
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -139,7 +138,7 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         case securityCodeTextField:
             cvv = sender.text
         default:
-            print(sender.text)
+            print(sender.text) // TODO: remove
         }
     }
 }

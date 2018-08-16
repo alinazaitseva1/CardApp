@@ -43,13 +43,23 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         secondPartCardNumberTextField.delegate = self
         thirdPartCardNumberTextField.delegate = self
         fourthPartCardNumberTextField.delegate = self
+        securityCodeTextField.delegate = self
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text else { return true }
-        let length = 4
+        let cardNumberLength = 4
+        let securityNumberLength = 3
+        
         let newLength = text.count + string.count - range.length
-        return newLength <= length
+        
+        let cardLengthValidate = newLength <= cardNumberLength
+        let securityLengthValidate = newLength <= securityNumberLength
+        
+        if textField == securityCodeTextField {
+            return securityLengthValidate && symbolsValidate(string)
+        }
+        return cardLengthValidate && symbolsValidate(string)
     }
     @IBAction func editingCardNumber(_ sender: UITextField) {
         if (sender.text?.count)! == 4 {
@@ -70,6 +80,11 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         }
     }
     
+    private func symbolsValidate (_ string: String) -> Bool {
+        let allowedCharacters = CharacterSet.decimalDigits
+        let characterSet = CharacterSet(charactersIn: string)
+        return allowedCharacters.isSuperset(of: characterSet)
+    }
     
     
     @IBAction func editingTextField(_ sender: UITextField) {

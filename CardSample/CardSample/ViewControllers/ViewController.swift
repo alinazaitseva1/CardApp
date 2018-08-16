@@ -34,6 +34,13 @@ class ViewController: UIViewController, UITextFieldDelegate  {
             expireDate: expireDate,
             cvv: cvv)
         print(creditCard)
+        
+        let alert = UIAlertController(title: "Credit card", message: creditCard?.cardEntityRepresentation, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true)
     }
     
     fileprivate func setCardTextFieldsDisabled() {
@@ -55,6 +62,7 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         super.viewDidLoad()
         setCardTextFieldsDisabled()
         setTextFieldsDelegate()
+        
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -143,5 +151,15 @@ struct CardEntity {
     var cardNumber: String
     var expireDate: String
     var cvv: String
+    
+    var cardEntityRepresentation: String {
+        return """
+        "name" : "\(name ?? "")",
+        "card number" : "\(cardNumber)",
+        "expire date" : "\(expireDate)",+
+        
+        "cvv" : "\(cvv)"
+"""
+    }
 
 }

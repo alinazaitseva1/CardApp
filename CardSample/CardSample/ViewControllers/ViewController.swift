@@ -15,9 +15,10 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     @IBOutlet weak var securityCodeTextField: UITextField!
     var creditCard: CardEntity?
     var name: String?
-    var cardNumber: [String]?
+    var cardNumber = ""
     var expireDate: String?
     var cvv: String?
+    
     
     @IBOutlet weak var firstPartCardNumberTextField: UITextField!
     @IBOutlet weak var secondPartCardNumberTextField: UITextField!
@@ -27,7 +28,7 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     
     @IBAction func pushedAddCard(_ sender: UIButton) {
         creditCard = CardEntity(name: name,
-                                cardNumber: "111",
+                                cardNumber: cardNumber,
                                 expireDate: expireDate!,
                                 cvv: cvv!)
         print(creditCard)
@@ -38,23 +39,37 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         secondPartCardNumberTextField.isEnabled = false
         thirdPartCardNumberTextField.isEnabled = false
         fourthPartCardNumberTextField.isEnabled = false
-        
+        firstPartCardNumberTextField.delegate = self
+        secondPartCardNumberTextField.delegate = self
+        thirdPartCardNumberTextField.delegate = self
+        fourthPartCardNumberTextField.delegate = self
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let text = textField.text else { return true }
+        let length = 4
+        let newLength = text.count + string.count - range.length
+        return newLength <= length
     }
     @IBAction func editingCardNumber(_ sender: UITextField) {
         if (sender.text?.count)! == 4 {
-            cardNumber?.append(sender.text!)
+            cardNumber += sender.text!
             switch sender {
             case firstPartCardNumberTextField :
                 secondPartCardNumberTextField.isEnabled = true
+                secondPartCardNumberTextField.becomeFirstResponder()
             case secondPartCardNumberTextField :
                 thirdPartCardNumberTextField.isEnabled = true
+                thirdPartCardNumberTextField.becomeFirstResponder()
             case thirdPartCardNumberTextField :
                 fourthPartCardNumberTextField.isEnabled = true
+                fourthPartCardNumberTextField.becomeFirstResponder()
             default:
-                print(sender)
+                fourthPartCardNumberTextField.resignFirstResponder()
             }
         }
     }
+    
     
     
     @IBAction func editingTextField(_ sender: UITextField) {

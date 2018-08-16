@@ -27,40 +27,59 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     
     
     @IBAction func pushedAddCard(_ sender: UIButton) {
-        creditCard = CardEntity(name: name,
-                                cardNumber: cardNumber,
-                                expireDate: expireDate!,
-                                cvv: cvv!)
+        guard let expireDate = expireDate, let cvv = cvv else { return }
+        creditCard = CardEntity(
+            name: name,
+            cardNumber: cardNumber,
+            expireDate: expireDate,
+            cvv: cvv)
         print(creditCard)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    fileprivate func setCardTextFieldsDisabled() {
         secondPartCardNumberTextField.isEnabled = false
         thirdPartCardNumberTextField.isEnabled = false
         fourthPartCardNumberTextField.isEnabled = false
+    }
+    
+    fileprivate func setTextFieldsDelegate() {
         firstPartCardNumberTextField.delegate = self
         secondPartCardNumberTextField.delegate = self
         thirdPartCardNumberTextField.delegate = self
         fourthPartCardNumberTextField.delegate = self
         securityCodeTextField.delegate = self
+        expireDateTextField.delegate = self
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setCardTextFieldsDisabled()
+        setTextFieldsDelegate()
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text else { return true }
-        let cardNumberLength = 4
-        let securityNumberLength = 3
         
         let newLength = text.count + string.count - range.length
         
-        let cardLengthValidate = newLength <= cardNumberLength
-        let securityLengthValidate = newLength <= securityNumberLength
-        
-        if textField == securityCodeTextField {
-            return securityLengthValidate && symbolsValidate(string)
+        let limitLength: Int?
+        switch textField {
+        case securityCodeTextField:
+            limitLength = 3
+        case expireDateTextField:
+            limitLength = 5
+        case firstPartCardNumberTextField, secondPartCardNumberTextField, thirdPartCardNumberTextField, fourthPartCardNumberTextField:
+            limitLength = 4
+        default:
+            limitLength = 19
         }
-        return cardLengthValidate && symbolsValidate(string)
+        
+        let lengthValidate = newLength <= limitLength!
+        
+        return lengthValidate && symbolsValidate(string)
+        
     }
+    
     @IBAction func editingCardNumber(_ sender: UITextField) {
         if (sender.text?.count)! == 4 {
             cardNumber += sender.text!
@@ -76,6 +95,22 @@ class ViewController: UIViewController, UITextFieldDelegate  {
                 fourthPartCardNumberTextField.becomeFirstResponder()
             default:
                 fourthPartCardNumberTextField.resignFirstResponder()
+            }
+        }
+    }
+    
+    var isSlashAdded = false
+    
+    @IBAction func editingExpireDate(_ sender: UITextField) {
+        if let text = sender.text {
+            if text.count == 2 {
+                if isSlashAdded {
+                    sender.text = String("\(text.first!)")
+                    isSlashAdded = false
+                } else {
+                    sender.text = String("\(text)/")
+                    isSlashAdded = true
+                }
             }
         }
     }

@@ -31,7 +31,7 @@
                                     <action selector="editingTextField:" destination="BYZ-38-t0r" eventType="editingChanged" id="vvT-aN-Bwm"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="MM/YY" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kAz-Ju-Dvg">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="MM/YY" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kAz-Ju-Dvg" customClass="ExpireDateTextField" customModule="CardSample" customModuleProvider="target">
                                 <rect key="frame" x="32" y="369" width="150" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="46T-Mn-i4X"/>
@@ -41,6 +41,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
+                                    <action selector="editingExpireDate:" destination="BYZ-38-t0r" eventType="editingChanged" id="x4h-kN-vlp"/>
                                     <action selector="editingTextField:" destination="BYZ-38-t0r" eventType="editingChanged" id="ZKG-SI-gei"/>
                                 </connections>
                             </textField>

@@ -18,7 +18,23 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     var cardNumber = ""
     var expireDate: String?
     var cvv: String?
-    var isValid = false
+   
+    var isValid: Bool {
+        guard let cvvCount = cvv?.count, let expireDateCount = expireDate?.count else { return false }
+        
+        if cvvCount == 3, expireDateCount == 5, cardNumber.count == 16 {
+            return true
+        } else {
+            if cvvCount <= 3  {
+                securityCodeTextField.setBorderColor(color: .red)
+        
+            }
+            if expireDateCount <= 5 {
+                expireDateTextField.setBorderColor(color: .red)
+            }
+            return false
+        }
+    }
     
     @IBOutlet weak var firstPartCardNumberTextField: UITextField!
     @IBOutlet weak var secondPartCardNumberTextField: UITextField!
@@ -39,6 +55,7 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         self.showAlert(title: "Credit card", message: (creditCard?.cardEntityRepresentation)!)
         } else {
             self.showAlert(title: "Error", message: TypeError.dataIsAbsent.localizedDescription)
+            
         }
     
     }
@@ -155,8 +172,7 @@ struct CardEntity {
         return """
         "name" : "\(name ?? "")",
         "card number" : "\(cardNumber)",
-        "expire date" : "\(expireDate)",+
-        
+        "expire date" : "\(expireDate)",
         "cvv" : "\(cvv)"
 """
     }

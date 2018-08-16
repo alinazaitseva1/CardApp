@@ -14,7 +14,7 @@ enum TypeError: Error {
     var localizedDescription: String {
         switch self {
         case .dataIsAbsent:
-            return "Please fill in all fields"
+            return "Required fields cannot be left blank"
         }
     }
 }

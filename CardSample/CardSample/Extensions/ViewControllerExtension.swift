@@ -17,3 +17,11 @@ extension UIViewController {
         present(alert, animated: true, completion: nil)
     }
 }
+
+extension UITextField {
+    func setBorderColor (color: UIColor) {
+        securityCodeTextField.layer.borderWidth = 1
+        securityCodeTextField.layer.cornerRadius = 5
+        securityCodeTextField.layer.borderColor = color.cgColor
+    }
+}

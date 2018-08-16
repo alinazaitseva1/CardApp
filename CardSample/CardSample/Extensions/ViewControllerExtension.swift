@@ -20,8 +20,8 @@ extension UIViewController {
 
 extension UITextField {
     func setBorderColor (color: UIColor) {
-        securityCodeTextField.layer.borderWidth = 1
-        securityCodeTextField.layer.cornerRadius = 5
-        securityCodeTextField.layer.borderColor = color.cgColor
+        self.layer.borderWidth = 1
+        self.layer.cornerRadius = 5
+        self.layer.borderColor = color.cgColor
     }
 }

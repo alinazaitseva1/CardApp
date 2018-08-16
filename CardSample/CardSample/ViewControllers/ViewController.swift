@@ -13,6 +13,12 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     @IBOutlet weak var nameOnCardTextField: UITextField!
     @IBOutlet weak var expireDateTextField: UITextField!
     @IBOutlet weak var securityCodeTextField: UITextField!
+    
+    @IBOutlet weak var firstPartCardNumberTextField: UITextField!
+    @IBOutlet weak var secondPartCardNumberTextField: UITextField!
+    @IBOutlet weak var thirdPartCardNumberTextField: UITextField!
+    @IBOutlet weak var fourthPartCardNumberTextField: UITextField!
+    
     var creditCard: CardEntity?
     var name: String?
     var cardNumber = ""
@@ -20,26 +26,39 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     var cvv: String?
    
     var isValid: Bool {
-        guard let cvvCount = cvv?.count, let expireDateCount = expireDate?.count else { return false }
+        guard let cvvCount = cvv?.count, let expireDateCount = expireDate?.count else { return false } // TODO : remove guard and force unwrapped var
         
-        if cvvCount == 3, expireDateCount == 5, cardNumber.count == 16 {
+        if let cvvCount = cvv?.count, cvvCount == 3, let expireDateCount = expireDate?.count, expireDateCount == 5, cardNumber.count == 16 {
             return true
         } else {
             if cvvCount <= 3  {
                 securityCodeTextField.setBorderColor(color: .red)
-        
             }
             if expireDateCount <= 5 {
                 expireDateTextField.setBorderColor(color: .red)
+            }
+            if cardNumber.count <= 16 {
+                if firstPartCardNumberTextField.text?.count != 4 {
+                    firstPartCardNumberTextField.setBorderColor(color: .red)
+                }
+                if secondPartCardNumberTextField.text?.count != 4 {
+                    secondPartCardNumberTextField.setBorderColor(color: .red)
+                }
+                if thirdPartCardNumberTextField.text?.count != 4 {
+                    thirdPartCardNumberTextField.setBorderColor(color: .red)
+                }
+                if fourthPartCardNumberTextField.text?.count != 4 {
+                    fourthPartCardNumberTextField.setBorderColor(color: .red)
+                }
             }
             return false
         }
     }
     
-    @IBOutlet weak var firstPartCardNumberTextField: UITextField!
-    @IBOutlet weak var secondPartCardNumberTextField: UITextField!
-    @IBOutlet weak var thirdPartCardNumberTextField: UITextField!
-    @IBOutlet weak var fourthPartCardNumberTextField: UITextField!
+
+    func setDefaultBorderColor(for textField: UITextField) {
+        textField.setBorderColor(color: #colorLiteral(red: 0.9411764706, green: 0.9411764706, blue: 0.9411764706, alpha: 1))
+    }
     
     
     @IBAction func pushedAddCard(_ sender: UIButton) {
@@ -82,6 +101,7 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        setDefaultBorderColor(for: textField)
         guard let text = textField.text else { return true }
         
         let newLength = text.count + string.count - range.length

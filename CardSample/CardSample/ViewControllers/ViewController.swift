@@ -30,36 +30,47 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         super.viewDidLoad()
         setCardTextFieldsDisabled()
         setTextFieldsDelegate()
+        setKeyboardType()
     }
     
+    fileprivate func setKeyboardType() {
+        firstPartCardNumberTextField.keyboardType = UIKeyboardType.numberPad
+        secondPartCardNumberTextField.keyboardType = UIKeyboardType.numberPad
+        thirdPartCardNumberTextField.keyboardType = UIKeyboardType.numberPad
+        fourthPartCardNumberTextField.keyboardType = UIKeyboardType.numberPad
+        expireDateTextField.keyboardType = UIKeyboardType.decimalPad
+        securityCodeTextField.keyboardType = UIKeyboardType.numberPad
+    }
+    
+    
     var isValid: Bool {
-            
-            if securityCodeTextField.text?.count == 3, expireDateTextField.text?.count == 5, cardNumber.count == 16 {
-                return true
+        
+        if securityCodeTextField.text?.count == 3, expireDateTextField.text?.count == 5, cardNumber.count == 16 {
+            return true
+        } else {
+            if (securityCodeTextField.text?.count)! < 3  {
+                securityCodeTextField.setBorderColor(color: .red)
+            }
+            if (expireDateTextField.text?.count)! < 5 {
+                expireDateTextField.setBorderColor(color: .red)
             } else {
-                if (securityCodeTextField.text?.count)! < 3  {
-                    securityCodeTextField.setBorderColor(color: .red)
+                expireDateTextField.setBorderColor(color: #colorLiteral(red: 0.9411764706, green: 0.9411764706, blue: 0.9411764706, alpha: 1))
+            }
+            if cardNumber.count <= 16 {
+                if firstPartCardNumberTextField.text?.count != 4 {
+                    firstPartCardNumberTextField.setBorderColor(color: .red)
                 }
-                if (expireDateTextField.text?.count)! < 5 {
-                    expireDateTextField.setBorderColor(color: .red)
-                } else {
-                    expireDateTextField.setBorderColor(color: #colorLiteral(red: 0.9411764706, green: 0.9411764706, blue: 0.9411764706, alpha: 1))
+                if secondPartCardNumberTextField.text?.count != 4 {
+                    secondPartCardNumberTextField.setBorderColor(color: .red)
                 }
-                if cardNumber.count <= 16 {
-                    if firstPartCardNumberTextField.text?.count != 4 {
-                        firstPartCardNumberTextField.setBorderColor(color: .red)
-                    }
-                    if secondPartCardNumberTextField.text?.count != 4 {
-                        secondPartCardNumberTextField.setBorderColor(color: .red)
-                    }
-                    if thirdPartCardNumberTextField.text?.count != 4 {
-                        thirdPartCardNumberTextField.setBorderColor(color: .red)
-                    }
-                    if fourthPartCardNumberTextField.text?.count != 4 {
-                        fourthPartCardNumberTextField.setBorderColor(color: .red)
-                    }
+                if thirdPartCardNumberTextField.text?.count != 4 {
+                    thirdPartCardNumberTextField.setBorderColor(color: .red)
+                }
+                if fourthPartCardNumberTextField.text?.count != 4 {
+                    fourthPartCardNumberTextField.setBorderColor(color: .red)
                 }
             }
+        }
         return false
     }
     
@@ -146,9 +157,9 @@ class ViewController: UIViewController, UITextFieldDelegate  {
                 fourthPartCardNumberTextField.becomeFirstResponder()
             case fourthPartCardNumberTextField :
                 expireDateTextField.becomeFirstResponder()
-
+                
             default:
-                fourthPartCardNumberTextField.resignFirstResponder()
+                break
             }
         }
     }
@@ -189,6 +200,9 @@ class ViewController: UIViewController, UITextFieldDelegate  {
             }
         case securityCodeTextField:
             cvv = sender.text
+            if cvv?.count == 3 {
+                securityCodeTextField.resignFirstResponder()
+            }
         default:
             break
         }

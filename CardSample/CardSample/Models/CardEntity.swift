@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 struct CardEntity {
     
     var name: String?

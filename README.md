@@ -1,4 +1,7 @@
 # CardApp
+App was tested on iPhone 7 simulator
+Built on XCode 9.4
+
 1. The Name on Card field should be optional (not required).
 2. The Card Number field should have four separate inputs.
 Maximum number of symbols in each field should be four.

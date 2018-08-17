@@ -40,7 +40,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="editingExpireDate:" destination="BYZ-38-t0r" eventType="editingChanged" id="x4h-kN-vlp"/>
                                     <action selector="editingTextField:" destination="BYZ-38-t0r" eventType="editingChanged" id="ZKG-SI-gei"/>
                                 </connections>
                             </textField>

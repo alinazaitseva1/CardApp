@@ -184,7 +184,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ts0-Bh-fvB"/>
+                    <navigationItem key="navigationItem" id="ts0-Bh-fvB">
+                        <barButtonItem key="leftBarButtonItem" title="CardSample" id="q5h-zf-35n">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="expireDateTextField" destination="kAz-Ju-Dvg" id="ckR-hh-ca2"/>
                         <outlet property="firstPartCardNumberTextField" destination="kkg-fb-Rcu" id="avs-ao-yPZ"/>

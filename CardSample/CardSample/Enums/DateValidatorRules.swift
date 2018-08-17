@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DateValidatorRules {
+class DateValidatorRules { // TODO: Trying to use validation class but could not implement it
     var string: String
     
     var firstNumber: Int {

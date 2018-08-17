@@ -176,7 +176,6 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         return !allowedCharacters.isSuperset(of: characterSet)
     }
     
-    
     @IBAction func editingTextField(_ sender: UITextField) {
         switch sender {
         case nameOnCardTextField:

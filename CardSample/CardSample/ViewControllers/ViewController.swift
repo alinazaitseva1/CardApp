@@ -30,18 +30,7 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         super.viewDidLoad()
         setCardTextFieldsDisabled()
         setTextFieldsDelegate()
-        setKeyboardType()
     }
-    
-    fileprivate func setKeyboardType() {
-        firstPartCardNumberTextField.keyboardType = UIKeyboardType.numberPad
-        secondPartCardNumberTextField.keyboardType = UIKeyboardType.numberPad
-        thirdPartCardNumberTextField.keyboardType = UIKeyboardType.numberPad
-        fourthPartCardNumberTextField.keyboardType = UIKeyboardType.numberPad
-        expireDateTextField.keyboardType = UIKeyboardType.decimalPad
-        securityCodeTextField.keyboardType = UIKeyboardType.numberPad
-    }
-    
     
     var isValid: Bool {
         
@@ -175,7 +164,6 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         let characterSet = CharacterSet(charactersIn: string)
         return !allowedCharacters.isSuperset(of: characterSet)
     }
-    
     
     @IBAction func editingTextField(_ sender: UITextField) {
         switch sender {

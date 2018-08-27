@@ -25,7 +25,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
                                 <connections>
                                     <action selector="editingTextField:" destination="BYZ-38-t0r" eventType="editingChanged" id="vvT-aN-Bwm"/>
                                 </connections>
@@ -38,7 +38,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 <connections>
                                     <action selector="editingTextField:" destination="BYZ-38-t0r" eventType="editingChanged" id="ZKG-SI-gei"/>
                                 </connections>
@@ -78,7 +78,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
                                     <action selector="editingCardNumber:" destination="BYZ-38-t0r" eventType="editingChanged" id="I33-8R-E9y"/>
                                 </connections>
@@ -91,7 +91,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
                                     <action selector="editingCardNumber:" destination="BYZ-38-t0r" eventType="editingChanged" id="WRx-4M-x5f"/>
                                 </connections>
@@ -104,7 +104,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
                                     <action selector="editingCardNumber:" destination="BYZ-38-t0r" eventType="editingChanged" id="Hs3-bg-2TY"/>
                                 </connections>
@@ -132,7 +132,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
                                 <connections>
                                     <action selector="editingTextField:" destination="BYZ-38-t0r" eventType="editingChanged" id="ibB-DK-whN"/>
                                 </connections>
@@ -147,7 +147,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
                                     <action selector="editingCardNumber:" destination="BYZ-38-t0r" eventType="editingChanged" id="EuW-M6-jFG"/>
                                 </connections>

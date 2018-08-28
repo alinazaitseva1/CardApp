@@ -83,7 +83,7 @@ class ViewController: UIViewController, UITextFieldDelegate  {
             if cvv?.count == 3 {
                 securityCodeTextField.setBorderColor(color: #colorLiteral(red: 0.9411764706, green: 0.9411764706, blue: 0.9411764706, alpha: 1))
             }
-            self.showAlert(title: "Error", message: TypeError.dataIsAbsent.localizedDescription)
+            self.showAlert(title: "Error", message: TypeOfError.dataIsAbsent.localizedDescription)
         }
         
     }

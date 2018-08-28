@@ -8,13 +8,13 @@
 
 import Foundation
 
-enum TypeError: Error {
+enum TypeOfError: Error {
     case dataIsAbsent
     
     var localizedDescription: String {
         switch self {
         case .dataIsAbsent:
-            return "Required fields cannot be left blank"
+            return NSLocalizedString("A user-friendly description of the error.", comment: "Required fields cannot be left blank")
         }
     }
 }

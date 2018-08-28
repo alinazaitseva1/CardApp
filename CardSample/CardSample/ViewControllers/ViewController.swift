@@ -78,7 +78,7 @@ class ViewController: UIViewController, UITextFieldDelegate  {
                 expireDate: expireDate,
                 cvv: cvv)
             
-            self.showAlert(title: "Credit card", message: (creditCard?.cardEntityRepresentation)!)
+            self.showAlert(title: "Credit card", message: (creditCard?.Decodable)!)
         } else {
             if cvv?.count == 3 {
                 securityCodeTextField.setBorderColor(color: #colorLiteral(red: 0.9411764706, green: 0.9411764706, blue: 0.9411764706, alpha: 1))

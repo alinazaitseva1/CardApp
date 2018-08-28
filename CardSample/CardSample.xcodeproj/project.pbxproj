@@ -10,7 +10,6 @@
 		CE5A78D62122E0EA00D36B8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A78D52122E0EA00D36B8A /* AppDelegate.swift */; };
 		CE5A78D82122E0EA00D36B8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A78D72122E0EA00D36B8A /* ViewController.swift */; };
 		CE5A78DB2122E0EA00D36B8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE5A78D92122E0EA00D36B8A /* Main.storyboard */; };
-		CE5A78DE2122E0EA00D36B8A /* CardSample.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE5A78DC2122E0EA00D36B8A /* CardSample.xcdatamodeld */; };
 		CE5A78E02122E10E00D36B8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE5A78DF2122E10E00D36B8A /* Assets.xcassets */; };
 		CE5A78E32122E10E00D36B8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE5A78E12122E10E00D36B8A /* LaunchScreen.storyboard */; };
 		CEB4144C2125B11B004E373A /* TypeOfError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB4144B2125B11B004E373A /* TypeOfError.swift */; };
@@ -24,7 +23,6 @@
 		CE5A78D52122E0EA00D36B8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE5A78D72122E0EA00D36B8A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CE5A78DA2122E0EA00D36B8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CE5A78DD2122E0EA00D36B8A /* CardSample.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CardSample.xcdatamodel; sourceTree = "<group>"; };
 		CE5A78DF2122E10E00D36B8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE5A78E22122E10E00D36B8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE5A78E42122E10E00D36B8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -71,7 +69,6 @@
 				CE5A78EA2122E12000D36B8A /* Supporting files */,
 				CE5A78D92122E0EA00D36B8A /* Main.storyboard */,
 				CE5A78E42122E10E00D36B8A /* Info.plist */,
-				CE5A78DC2122E0EA00D36B8A /* CardSample.xcdatamodeld */,
 			);
 			path = CardSample;
 			sourceTree = "<group>";
@@ -89,6 +86,7 @@
 		CE5A78EB2122E15D00D36B8A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CEB414552126D69D004E373A /* DateValidatorRules.swift */,
 				CEB414572126FA48004E373A /* CardEntity.swift */,
 			);
 			path = Models;
@@ -106,7 +104,6 @@
 			isa = PBXGroup;
 			children = (
 				CEB4144B2125B11B004E373A /* TypeOfError.swift */,
-				CEB414552126D69D004E373A /* DateValidatorRules.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -194,7 +191,6 @@
 				CEB414562126D69D004E373A /* DateValidatorRules.swift in Sources */,
 				CEB414582126FA48004E373A /* CardEntity.swift in Sources */,
 				CEB414512125B379004E373A /* ViewControllerExtension.swift in Sources */,
-				CE5A78DE2122E0EA00D36B8A /* CardSample.xcdatamodeld in Sources */,
 				CE5A78D82122E0EA00D36B8A /* ViewController.swift in Sources */,
 				CE5A78D62122E0EA00D36B8A /* AppDelegate.swift in Sources */,
 			);
@@ -347,7 +343,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "-.CardSample";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ios.cardSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -365,7 +361,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "-.CardSample";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ios.cardSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -394,19 +390,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		CE5A78DC2122E0EA00D36B8A /* CardSample.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				CE5A78DD2122E0EA00D36B8A /* CardSample.xcdatamodel */,
-			);
-			currentVersion = CE5A78DD2122E0EA00D36B8A /* CardSample.xcdatamodel */;
-			path = CardSample.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = CE5A78CA2122E0EA00D36B8A /* Project object */;
 }

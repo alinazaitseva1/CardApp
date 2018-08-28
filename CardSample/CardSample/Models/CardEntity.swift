@@ -15,7 +15,7 @@ struct CardEntity {
     var expireDate: String
     var cvv: String
     
-    var cardEntityRepresentation: String {
+    var Decodable: String {
         return """
         "name" : "\(name ?? "")",
         "card number" : "\(cardNumber)",

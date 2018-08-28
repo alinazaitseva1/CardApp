@@ -14,7 +14,7 @@ enum TypeOfError: Error {
     var localizedDescription: String {
         switch self {
         case .dataIsAbsent:
-            return NSLocalizedString("A user-friendly description of the error.", comment: "Required fields cannot be left blank")
+            return NSLocalizedString("Required fields cannot be left blank", comment: "All fields should be filled in")
         }
     }
 }

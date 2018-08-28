@@ -34,6 +34,7 @@
                                 <rect key="frame" x="16" y="184" width="94.5" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="m0a-el-MIW"/>
+                                    <constraint firstAttribute="width" constant="140" id="st7-ns-zyR"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.39537013167657636" green="0.40626648502040419" blue="0.39407385262312089" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -43,7 +44,7 @@
                                 <rect key="frame" x="16" y="220" width="308.5" height="40"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kkg-fb-Rcu">
-                                        <rect key="frame" x="0.0" y="0.0" width="74.5" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="65" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="3gL-5e-FUb"/>
                                             <constraint firstAttribute="width" constant="65" id="mp2-vQ-SNY"/>
@@ -56,7 +57,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FeU-FO-o5m">
-                                        <rect key="frame" x="87.5" y="0.0" width="65" height="40"/>
+                                        <rect key="frame" x="78" y="0.0" width="65" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="1Px-Ko-kcH"/>
                                             <constraint firstAttribute="width" constant="65" id="HiH-GK-0g2"/>
@@ -69,7 +70,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="grq-El-NS7">
-                                        <rect key="frame" x="165.5" y="0.0" width="65" height="40"/>
+                                        <rect key="frame" x="156" y="0.0" width="65" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="65" id="KXk-bH-SOX"/>
                                             <constraint firstAttribute="height" constant="40" id="lRe-7g-Wzg"/>
@@ -82,7 +83,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jMh-kU-QYf">
-                                        <rect key="frame" x="243.5" y="0.0" width="65" height="40"/>
+                                        <rect key="frame" x="234" y="0.0" width="74.5" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="65" id="JcE-OO-4bE"/>
                                             <constraint firstAttribute="height" constant="40" id="Smu-Sn-jnb"/>

@@ -25,6 +25,14 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     var expireDate: String?
     var cvv: String?
     var isSlashAdded = false
+    let cvvLimint = 3
+    let cardNumberLimit = 4
+    let maxNameLimit = 19
+    let dataSymbolsLimit = 5
+    let symbolsBeforePlaceholder = 2
+    let amountOfCardNumbers = 16
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,28 +42,28 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     
     var isValid: Bool {
         
-        if securityCodeTextField.text?.count == 3, expireDateTextField.text?.count == 5, cardNumber.count == 16 {
+        if securityCodeTextField.text?.count == cvvLimint, expireDateTextField.text?.count == dataSymbolsLimit, cardNumber.count == amountOfCardNumbers {
             return true
         } else {
-            if (securityCodeTextField.text?.count)! < 3  {
+            if (securityCodeTextField.text?.count)! < cvvLimint  {
                 securityCodeTextField.setBorderColor(color: .red)
             }
-            if (expireDateTextField.text?.count)! < 5 {
+            if (expireDateTextField.text?.count)! < dataSymbolsLimit {
                 expireDateTextField.setBorderColor(color: .red)
             } else {
                 expireDateTextField.setBorderColor(color: #colorLiteral(red: 0.9411764706, green: 0.9411764706, blue: 0.9411764706, alpha: 1))
             }
-            if cardNumber.count <= 16 {
-                if firstPartCardNumberTextField.text?.count != 4 {
+            if cardNumber.count <= amountOfCardNumbers {
+                if firstPartCardNumberTextField.text?.count != cardNumberLimit {
                     firstPartCardNumberTextField.setBorderColor(color: .red)
                 }
-                if secondPartCardNumberTextField.text?.count != 4 {
+                if secondPartCardNumberTextField.text?.count != cardNumberLimit {
                     secondPartCardNumberTextField.setBorderColor(color: .red)
                 }
-                if thirdPartCardNumberTextField.text?.count != 4 {
+                if thirdPartCardNumberTextField.text?.count != cardNumberLimit {
                     thirdPartCardNumberTextField.setBorderColor(color: .red)
                 }
-                if fourthPartCardNumberTextField.text?.count != 4 {
+                if fourthPartCardNumberTextField.text?.count != cardNumberLimit {
                     fourthPartCardNumberTextField.setBorderColor(color: .red)
                 }
             }
@@ -80,7 +88,7 @@ class ViewController: UIViewController, UITextFieldDelegate  {
             
             self.showAlert(title: "Credit card", message: (creditCard?.Decodable)!)
         } else {
-            if cvv?.count == 3 {
+            if cvv?.count == cvvLimint {
                 securityCodeTextField.setBorderColor(color: #colorLiteral(red: 0.9411764706, green: 0.9411764706, blue: 0.9411764706, alpha: 1))
             }
             self.showAlert(title: "Error", message: TypeOfError.dataIsAbsent.localizedDescription)
@@ -115,16 +123,16 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         switch textField {
         case securityCodeTextField:
             isValidationDone = symbolsValidate(string)
-            limitLength = 3
+            limitLength = cvvLimint
         case expireDateTextField:
             isValidationDone = symbolsValidate(string)
-            limitLength = 5
+            limitLength = dataSymbolsLimit
         case firstPartCardNumberTextField, secondPartCardNumberTextField, thirdPartCardNumberTextField, fourthPartCardNumberTextField:
             isValidationDone = symbolsValidate(string)
-            limitLength = 4
+            limitLength = cardNumberLimit
         default:
             isValidationDone = numbersValidate(string)
-            limitLength = 19
+            limitLength = maxNameLimit
         }
         let lengthValidate = newLength <= limitLength!
         
@@ -132,7 +140,7 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     }
     
     @IBAction func editingCardNumber(_ sender: UITextField) {
-        if (sender.text?.count)! == 4 {
+        if (sender.text?.count)! == cardNumberLimit {
             cardNumber += sender.text!
             switch sender {
             case firstPartCardNumberTextField :
@@ -173,7 +181,7 @@ class ViewController: UIViewController, UITextFieldDelegate  {
             
             expireDate = sender.text
             if let text = sender.text {
-                if text.count == 2 {
+                if text.count == symbolsBeforePlaceholder {
                     if isSlashAdded {
                         sender.text = "\(text.first!)"
                         isSlashAdded = false
@@ -182,13 +190,13 @@ class ViewController: UIViewController, UITextFieldDelegate  {
                         isSlashAdded = true
                     }
                 }
-                if text.count == 5 {
+                if text.count == dataSymbolsLimit {
                     securityCodeTextField.becomeFirstResponder()
                 }
             }
         case securityCodeTextField:
             cvv = sender.text
-            if cvv?.count == 3 {
+            if cvv?.count == cvvLimint {
                 securityCodeTextField.resignFirstResponder()
             }
         default:

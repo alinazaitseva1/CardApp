@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+// MARK: Extension to handle errors
+
 extension UIViewController {
     func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -17,6 +19,7 @@ extension UIViewController {
         present(alert, animated: true, completion: nil)
     }
 }
+// MARK: Extension adds border color, radius, width
 
 extension UITextField {
     func setBorderColor (color: UIColor) {

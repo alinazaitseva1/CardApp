@@ -19,19 +19,24 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     @IBOutlet weak var thirdPartCardNumberTextField: UITextField!
     @IBOutlet weak var fourthPartCardNumberTextField: UITextField!
     
+    // MARK: Properties for CardEntity data
+    
     var creditCard: CardEntity?
     var name: String?
     var cardNumber = ""
     var expireDate: String?
     var cvv: String?
+    
     var isSlashAdded = false
+    
+    // MARK: Limit for TextFields
+    
     let cvvLimint = 3
     let cardNumberLimit = 4
     let maxNameLimit = 19
     let dataSymbolsLimit = 5
     let symbolsBeforePlaceholder = 2
     let amountOfCardNumbers = 16
-    
     
     
     override func viewDidLoad() {
@@ -91,7 +96,7 @@ class ViewController: UIViewController, UITextFieldDelegate  {
             if cvv?.count == cvvLimint {
                 securityCodeTextField.setBorderColor(color: #colorLiteral(red: 0.9411764706, green: 0.9411764706, blue: 0.9411764706, alpha: 1))
             }
-            self.showAlert(title: "Error", message: TypeOfError.dataIsAbsent.localizedDescription)
+            self.showAlert(title: "Error", message: ValidationError.dataIsAbsent.localizedDescription)
         }
         
     }
@@ -146,15 +151,18 @@ class ViewController: UIViewController, UITextFieldDelegate  {
             case firstPartCardNumberTextField :
                 secondPartCardNumberTextField.isEnabled = true
                 secondPartCardNumberTextField.becomeFirstResponder()
+                secondPartCardNumberTextField.resignFirstResponder()
             case secondPartCardNumberTextField :
                 thirdPartCardNumberTextField.isEnabled = true
                 thirdPartCardNumberTextField.becomeFirstResponder()
+                thirdPartCardNumberTextField.resignFirstResponder()
             case thirdPartCardNumberTextField :
                 fourthPartCardNumberTextField.isEnabled = true
                 fourthPartCardNumberTextField.becomeFirstResponder()
+                fourthPartCardNumberTextField.resignFirstResponder()
             case fourthPartCardNumberTextField :
                 expireDateTextField.becomeFirstResponder()
-                
+                fourthPartCardNumberTextField.resignFirstResponder()
             default:
                 break
             }

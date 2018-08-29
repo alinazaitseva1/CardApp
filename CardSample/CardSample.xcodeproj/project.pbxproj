@@ -12,7 +12,7 @@
 		CE5A78DB2122E0EA00D36B8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE5A78D92122E0EA00D36B8A /* Main.storyboard */; };
 		CE5A78E02122E10E00D36B8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE5A78DF2122E10E00D36B8A /* Assets.xcassets */; };
 		CE5A78E32122E10E00D36B8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE5A78E12122E10E00D36B8A /* LaunchScreen.storyboard */; };
-		CEB4144C2125B11B004E373A /* TypeOfError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB4144B2125B11B004E373A /* TypeOfError.swift */; };
+		CEB4144C2125B11B004E373A /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB4144B2125B11B004E373A /* ValidationError.swift */; };
 		CEB414512125B379004E373A /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB414502125B379004E373A /* ViewControllerExtension.swift */; };
 		CEB414562126D69D004E373A /* DateValidatorRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB414552126D69D004E373A /* DateValidatorRules.swift */; };
 		CEB414582126FA48004E373A /* CardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB414572126FA48004E373A /* CardEntity.swift */; };
@@ -26,7 +26,7 @@
 		CE5A78DF2122E10E00D36B8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE5A78E22122E10E00D36B8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE5A78E42122E10E00D36B8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CEB4144B2125B11B004E373A /* TypeOfError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeOfError.swift; sourceTree = "<group>"; };
+		CEB4144B2125B11B004E373A /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 		CEB414502125B379004E373A /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		CEB414552126D69D004E373A /* DateValidatorRules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateValidatorRules.swift; sourceTree = "<group>"; };
 		CEB414572126FA48004E373A /* CardEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardEntity.swift; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 		CEB4144A2125B0B7004E373A /* Enums */ = {
 			isa = PBXGroup;
 			children = (
-				CEB4144B2125B11B004E373A /* TypeOfError.swift */,
+				CEB4144B2125B11B004E373A /* ValidationError.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -187,7 +187,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEB4144C2125B11B004E373A /* TypeOfError.swift in Sources */,
+				CEB4144C2125B11B004E373A /* ValidationError.swift in Sources */,
 				CEB414562126D69D004E373A /* DateValidatorRules.swift in Sources */,
 				CEB414582126FA48004E373A /* CardEntity.swift in Sources */,
 				CEB414512125B379004E373A /* ViewControllerExtension.swift in Sources */,

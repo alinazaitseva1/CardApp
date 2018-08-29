@@ -175,10 +175,10 @@ class ViewController: UIViewController, UITextFieldDelegate  {
             if let text = sender.text {
                 if text.count == 2 {
                     if isSlashAdded {
-                        sender.text = String("\(text.first!)")
+                        sender.text = "\(text.first!)"
                         isSlashAdded = false
                     } else {
-                        sender.text = String("\(text)/")
+                        sender.text = "\(text)/"
                         isSlashAdded = true
                     }
                 }

@@ -29,19 +29,18 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     
     var isSlashAdded = false
     
-    // MARK: Limit for TextFields
+    // MARK: Properties to limit amount in TextFields
     
     let cvvLimint = 3
     let cardNumberLimit = 4
     let maxNameLimit = 19
     let dataSymbolsLimit = 5
-    let symbolsBeforePlaceholder = 2
+    let symbolsBeforeBackslash = 2
     let amountOfCardNumbers = 16
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setCardTextFieldsDisabled()
         setTextFieldsDelegate()
     }
     
@@ -81,6 +80,7 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         textField.setBorderColor(color: #colorLiteral(red: 0.9411764706, green: 0.9411764706, blue: 0.9411764706, alpha: 1))
     }
     
+    // MARK: Action for pushed add card button
     
     @IBAction func pushedAddCard(_ sender: UIButton) {
         if isValid {
@@ -101,11 +101,8 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         
     }
     
-    fileprivate func setCardTextFieldsDisabled() {
-        secondPartCardNumberTextField.isEnabled = false
-        thirdPartCardNumberTextField.isEnabled = false
-        fourthPartCardNumberTextField.isEnabled = false
-    }
+    
+     // MARK: Function to appoint delegate for TextField
     
     fileprivate func setTextFieldsDelegate() {
         firstPartCardNumberTextField.delegate = self
@@ -116,6 +113,8 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         expireDateTextField.delegate = self
         nameOnCardTextField.delegate = self
     }
+    
+    //MARK: Function to validate amount of symbols in TextFields
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         setDefaultBorderColor(for: textField)
@@ -144,22 +143,24 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         return lengthValidate && isValidationDone
     }
     
+    // MARK: Function to adding symbols in TextFields
+    
     @IBAction func editingCardNumber(_ sender: UITextField) {
         if (sender.text?.count)! == cardNumberLimit {
             cardNumber += sender.text!
             switch sender {
             case firstPartCardNumberTextField :
                 secondPartCardNumberTextField.isEnabled = true
-                secondPartCardNumberTextField.becomeFirstResponder()
                 secondPartCardNumberTextField.resignFirstResponder()
+                secondPartCardNumberTextField.becomeFirstResponder()
             case secondPartCardNumberTextField :
                 thirdPartCardNumberTextField.isEnabled = true
-                thirdPartCardNumberTextField.becomeFirstResponder()
                 thirdPartCardNumberTextField.resignFirstResponder()
+                thirdPartCardNumberTextField.becomeFirstResponder()
             case thirdPartCardNumberTextField :
                 fourthPartCardNumberTextField.isEnabled = true
-                fourthPartCardNumberTextField.becomeFirstResponder()
                 fourthPartCardNumberTextField.resignFirstResponder()
+                fourthPartCardNumberTextField.becomeFirstResponder()
             case fourthPartCardNumberTextField :
                 expireDateTextField.becomeFirstResponder()
                 fourthPartCardNumberTextField.resignFirstResponder()
@@ -181,6 +182,8 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         return !allowedCharacters.isSuperset(of: characterSet)
     }
     
+    // MARK: Function to remove/add backslash
+    
     @IBAction func editingTextField(_ sender: UITextField) {
         switch sender {
         case nameOnCardTextField:
@@ -189,7 +192,7 @@ class ViewController: UIViewController, UITextFieldDelegate  {
             
             expireDate = sender.text
             if let text = sender.text {
-                if text.count == symbolsBeforePlaceholder {
+                if text.count == symbolsBeforeBackslash {
                     if isSlashAdded {
                         sender.text = "\(text.first!)"
                         isSlashAdded = false

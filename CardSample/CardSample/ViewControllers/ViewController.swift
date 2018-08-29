@@ -12,7 +12,7 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     
     @IBOutlet weak var nameOnCardTextField: UITextField!
     @IBOutlet weak var expireDateTextField: UITextField!
-    @IBOutlet weak var securityCodeTextField: UITextField!
+    @IBOutlet weak var cvvTextField: UITextField!
     
     @IBOutlet weak var firstCardNumberTextField: UITextField!
     @IBOutlet weak var secondCardNumberTextField: UITextField!
@@ -52,7 +52,7 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     //MARK: Appoint color and border radius to TextField
     
     func setDefaultBorderColor(for textField: UITextField) {
-        textField.setAppropriateLookToTextField(color: #colorLiteral(red: 0.9411764706, green: 0.9411764706, blue: 0.9411764706, alpha: 1))
+        textField.setAppropriateLookWith(color: #colorLiteral(red: 0.9411764706, green: 0.9411764706, blue: 0.9411764706, alpha: 1))
     }
     
     // MARK: Function to validate amount of symbols in TextField
@@ -72,23 +72,30 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     
     //MARK: Function to validate symbols amount in TextFields
     
+    
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         setDefaultBorderColor(for: textField)
+        
         guard let text = textField.text else { return true }
         
         let newLength = text.count + string.count - range.length
         var isValidationDone = false
         let limitLength: Int?
         
+        func validationDone() {
+            return  isValidationDone = symbolsValidate(string)
+        }
+        
         switch textField {
-        case securityCodeTextField:
-            isValidationDone = symbolsValidate(string)
+        case cvvTextField:
+            validationDone()
             limitLength = cvvLimit
         case expireDateTextField:
-            isValidationDone = symbolsValidate(string)
+            validationDone()
             limitLength = dataSymbolsLimit
         case firstCardNumberTextField, secondCardNumberTextField, thirdCardNumberTextField, fourthCardNumberTextField:
-            isValidationDone = symbolsValidate(string)
+            validationDone()
             limitLength = cardNumberLimit
         default:
             isValidationDone = numbersValidate(string)
@@ -103,29 +110,40 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     
     var isValid: Bool {
         
-        if securityCodeTextField.text?.count == cvvLimit, expireDateTextField.text?.count == dataSymbolsLimit, cardNumber.count == amountOfCardNumbers {
+        // MARK: amount of symbols in TextField
+        
+        let cvvCode = cvvTextField.text?.count
+        let expireDate = expireDateTextField.text?.count
+        let securityCode = cvvTextField.text?.count
+        
+        let firstCardNumber = firstCardNumberTextField.text?.count
+        let secondCardNumber = secondCardNumberTextField.text?.count
+        let thirdCardNumber = thirdCardNumberTextField.text?.count
+        let fourthCardNumber = fourthCardNumberTextField.text?.count
+        
+        if cvvCode == cvvLimit, expireDate == dataSymbolsLimit, cardNumber.count == amountOfCardNumbers {
             return true
         } else {
-            if (securityCodeTextField.text?.count)! < cvvLimit  {
-                securityCodeTextField.setAppropriateLookToTextField(color: .red)
+            if securityCode! < cvvLimit  {
+                cvvTextField.setAppropriateLookWith(color: .red)
             }
-            if (expireDateTextField.text?.count)! < dataSymbolsLimit {
-                expireDateTextField.setAppropriateLookToTextField(color: .red)
+            if expireDate! < dataSymbolsLimit {
+                expireDateTextField.setAppropriateLookWith(color: .red)
             } else {
-                expireDateTextField.setAppropriateLookToTextField(color: #colorLiteral(red: 0.9411764706, green: 0.9411764706, blue: 0.9411764706, alpha: 1))
+                expireDateTextField.setAppropriateLookWith(color: #colorLiteral(red: 0.9411764706, green: 0.9411764706, blue: 0.9411764706, alpha: 1))
             }
             if cardNumber.count <= amountOfCardNumbers {
-                if firstCardNumberTextField.text?.count != cardNumberLimit {
-                    firstCardNumberTextField.setAppropriateLookToTextField(color: .red)
+                if firstCardNumber! < cardNumberLimit {
+                    firstCardNumberTextField.setAppropriateLookWith(color: .red)
                 }
-                if secondCardNumberTextField.text?.count != cardNumberLimit {
-                    secondCardNumberTextField.setAppropriateLookToTextField(color: .red)
+                if secondCardNumber! < cardNumberLimit {
+                    secondCardNumberTextField.setAppropriateLookWith(color: .red)
                 }
-                if thirdCardNumberTextField.text?.count != cardNumberLimit {
-                    thirdCardNumberTextField.setAppropriateLookToTextField(color: .red)
+                if thirdCardNumber! < cardNumberLimit {
+                    thirdCardNumberTextField.setAppropriateLookWith(color: .red)
                 }
-                if fourthCardNumberTextField.text?.count != cardNumberLimit {
-                    fourthCardNumberTextField.setAppropriateLookToTextField(color: .red)
+                if fourthCardNumber! < cardNumberLimit {
+                    fourthCardNumberTextField.setAppropriateLookWith(color: .red)
                 }
             }
         }
@@ -151,13 +169,13 @@ class ViewController: UIViewController, UITextFieldDelegate  {
                     }
                 }
                 if text.count == dataSymbolsLimit {
-                    securityCodeTextField.becomeFirstResponder()
+                    cvvTextField.becomeFirstResponder()
                 }
             }
-        case securityCodeTextField:
+        case cvvTextField:
             cvv = sender.text
             if cvv?.count == cvvLimit {
-                securityCodeTextField.resignFirstResponder()
+                cvvTextField.resignFirstResponder()
             }
         default:
             break
@@ -172,15 +190,15 @@ class ViewController: UIViewController, UITextFieldDelegate  {
             switch sender {
             case firstCardNumberTextField :
                 secondCardNumberTextField.isEnabled = true
-                secondCardNumberTextField.becomeFirstResponder()
+                textFieldShouldBecome(secondCardNumberTextField)
             case secondCardNumberTextField :
                 thirdCardNumberTextField.isEnabled = true
-                thirdCardNumberTextField.becomeFirstResponder()
+                textFieldShouldBecome(thirdCardNumberTextField)
             case thirdCardNumberTextField :
                 fourthCardNumberTextField.isEnabled = true
-                fourthCardNumberTextField.becomeFirstResponder()
+                textFieldShouldBecome(fourthCardNumberTextField)
             case fourthCardNumberTextField :
-                expireDateTextField.becomeFirstResponder()
+                textFieldShouldBecome(expireDateTextField)
             default:
                 break
             }
@@ -202,7 +220,7 @@ class ViewController: UIViewController, UITextFieldDelegate  {
             self.showAlert(title: "Credit card", message: (creditCard?.Decodable)!)
         } else {
             if cvv?.count == cvvLimit {
-                securityCodeTextField.setAppropriateLookToTextField(color: #colorLiteral(red: 0.9411764706, green: 0.9411764706, blue: 0.9411764706, alpha: 1))
+                cvvTextField.setAppropriateLookWith(color: #colorLiteral(red: 0.9411764706, green: 0.9411764706, blue: 0.9411764706, alpha: 1))
             }
             self.showAlert(title: "Error", message: ValidationError.dataIsAbsent.localizedDescription)
         }
@@ -211,6 +229,11 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldShouldBecome(_ textField: UITextField) -> Bool {
+        textField.becomeFirstResponder()
         return true
     }
 

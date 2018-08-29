@@ -197,12 +197,12 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="cvvTextField" destination="gwX-8b-H2u" id="msV-nt-LQ2"/>
                         <outlet property="expireDateTextField" destination="kAz-Ju-Dvg" id="ckR-hh-ca2"/>
                         <outlet property="firstCardNumberTextField" destination="kkg-fb-Rcu" id="avs-ao-yPZ"/>
                         <outlet property="fourthCardNumberTextField" destination="jMh-kU-QYf" id="oVW-Qj-gAH"/>
                         <outlet property="nameOnCardTextField" destination="iD2-bu-v5r" id="dIv-3D-Q8S"/>
                         <outlet property="secondCardNumberTextField" destination="FeU-FO-o5m" id="USp-eG-I9X"/>
-                        <outlet property="securityCodeTextField" destination="gwX-8b-H2u" id="msV-nt-LQ2"/>
                         <outlet property="thirdCardNumberTextField" destination="grq-El-NS7" id="e40-wR-o3Y"/>
                     </connections>
                 </viewController>

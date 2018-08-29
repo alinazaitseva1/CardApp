@@ -31,7 +31,7 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     
     // MARK: Properties to limit amount in TextFields
     
-    let cvvLimint = 3
+    let cvvLimit = 3
     let cardNumberLimit = 4
     let maxNameLimit = 19
     let dataSymbolsLimit = 5
@@ -46,10 +46,10 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     
     var isValid: Bool {
         
-        if securityCodeTextField.text?.count == cvvLimint, expireDateTextField.text?.count == dataSymbolsLimit, cardNumber.count == amountOfCardNumbers {
+        if securityCodeTextField.text?.count == cvvLimit, expireDateTextField.text?.count == dataSymbolsLimit, cardNumber.count == amountOfCardNumbers {
             return true
         } else {
-            if (securityCodeTextField.text?.count)! < cvvLimint  {
+            if (securityCodeTextField.text?.count)! < cvvLimit  {
                 securityCodeTextField.setBorderColor(color: .red)
             }
             if (expireDateTextField.text?.count)! < dataSymbolsLimit {
@@ -93,7 +93,7 @@ class ViewController: UIViewController, UITextFieldDelegate  {
             
             self.showAlert(title: "Credit card", message: (creditCard?.Decodable)!)
         } else {
-            if cvv?.count == cvvLimint {
+            if cvv?.count == cvvLimit {
                 securityCodeTextField.setBorderColor(color: #colorLiteral(red: 0.9411764706, green: 0.9411764706, blue: 0.9411764706, alpha: 1))
             }
             self.showAlert(title: "Error", message: ValidationError.dataIsAbsent.localizedDescription)
@@ -127,7 +127,7 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         switch textField {
         case securityCodeTextField:
             isValidationDone = symbolsValidate(string)
-            limitLength = cvvLimint
+            limitLength = cvvLimit
         case expireDateTextField:
             isValidationDone = symbolsValidate(string)
             limitLength = dataSymbolsLimit
@@ -207,7 +207,7 @@ class ViewController: UIViewController, UITextFieldDelegate  {
             }
         case securityCodeTextField:
             cvv = sender.text
-            if cvv?.count == cvvLimint {
+            if cvv?.count == cvvLimit {
                 securityCodeTextField.resignFirstResponder()
             }
         default:

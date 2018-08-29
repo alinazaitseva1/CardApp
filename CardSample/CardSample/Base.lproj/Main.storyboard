@@ -28,6 +28,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="alphabet" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
                                     <action selector="editingTextField:" destination="BYZ-38-t0r" eventType="editingChanged" id="vvT-aN-Bwm"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="2if-0U-bP1"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CARD NUMBER" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mct-Go-X23">
@@ -49,6 +50,7 @@
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
                                         <connections>
                                             <action selector="editingCardNumber:" destination="BYZ-38-t0r" eventType="editingChanged" id="I33-8R-E9y"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="f7D-FS-c2I"/>
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FeU-FO-o5m">
@@ -58,6 +60,7 @@
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
                                         <connections>
                                             <action selector="editingCardNumber:" destination="BYZ-38-t0r" eventType="editingChanged" id="WRx-4M-x5f"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="dXV-IE-Mma"/>
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="grq-El-NS7">
@@ -67,6 +70,7 @@
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
                                         <connections>
                                             <action selector="editingCardNumber:" destination="BYZ-38-t0r" eventType="editingChanged" id="Hs3-bg-2TY"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="wiR-Aw-EnN"/>
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jMh-kU-QYf">
@@ -76,6 +80,7 @@
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
                                         <connections>
                                             <action selector="editingCardNumber:" destination="BYZ-38-t0r" eventType="editingChanged" id="EuW-M6-jFG"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="WVY-IM-RNG"/>
                                         </connections>
                                     </textField>
                                 </subviews>
@@ -122,6 +127,7 @@
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                         <connections>
                                             <action selector="editingTextField:" destination="BYZ-38-t0r" eventType="editingChanged" id="ibB-DK-whN"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="i38-vc-kRm"/>
                                         </connections>
                                     </textField>
                                 </subviews>
@@ -192,12 +198,12 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="expireDateTextField" destination="kAz-Ju-Dvg" id="ckR-hh-ca2"/>
-                        <outlet property="firstPartCardNumberTextField" destination="kkg-fb-Rcu" id="avs-ao-yPZ"/>
-                        <outlet property="fourthPartCardNumberTextField" destination="jMh-kU-QYf" id="oVW-Qj-gAH"/>
+                        <outlet property="firstCardNumberTextField" destination="kkg-fb-Rcu" id="avs-ao-yPZ"/>
+                        <outlet property="fourthCardNumberTextField" destination="jMh-kU-QYf" id="oVW-Qj-gAH"/>
                         <outlet property="nameOnCardTextField" destination="iD2-bu-v5r" id="dIv-3D-Q8S"/>
-                        <outlet property="secondPartCardNumberTextField" destination="FeU-FO-o5m" id="USp-eG-I9X"/>
+                        <outlet property="secondCardNumberTextField" destination="FeU-FO-o5m" id="USp-eG-I9X"/>
                         <outlet property="securityCodeTextField" destination="gwX-8b-H2u" id="msV-nt-LQ2"/>
-                        <outlet property="thirdPartCardNumberTextField" destination="grq-El-NS7" id="e40-wR-o3Y"/>
+                        <outlet property="thirdCardNumberTextField" destination="grq-El-NS7" id="e40-wR-o3Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

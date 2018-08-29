@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C70EC7E3213729180056DF97 /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70EC7E2213729180056DF97 /* TextFieldExtension.swift */; };
 		CE5A78D62122E0EA00D36B8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A78D52122E0EA00D36B8A /* AppDelegate.swift */; };
 		CE5A78D82122E0EA00D36B8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A78D72122E0EA00D36B8A /* ViewController.swift */; };
 		CE5A78DB2122E0EA00D36B8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE5A78D92122E0EA00D36B8A /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C70EC7E2213729180056DF97 /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
 		CE5A78D22122E0EA00D36B8A /* CardSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE5A78D52122E0EA00D36B8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE5A78D72122E0EA00D36B8A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				CEB414502125B379004E373A /* ViewControllerExtension.swift */,
+				C70EC7E2213729180056DF97 /* TextFieldExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 				CEB4144C2125B11B004E373A /* ValidationError.swift in Sources */,
 				CEB414562126D69D004E373A /* DateValidatorRules.swift in Sources */,
 				CEB414582126FA48004E373A /* CardEntity.swift in Sources */,
+				C70EC7E3213729180056DF97 /* TextFieldExtension.swift in Sources */,
 				CEB414512125B379004E373A /* ViewControllerExtension.swift in Sources */,
 				CE5A78D82122E0EA00D36B8A /* ViewController.swift in Sources */,
 				CE5A78D62122E0EA00D36B8A /* AppDelegate.swift in Sources */,

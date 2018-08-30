@@ -152,6 +152,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iD2-bu-v5r" secondAttribute="trailing" constant="16" id="0EN-MP-rCa"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="seB-D9-a39" secondAttribute="trailing" constant="16" id="0Fz-Mj-xIS"/>
@@ -188,6 +189,7 @@
                                 </label>
                             </subviews>
                             <color key="backgroundColor" red="0.43137254901960786" green="0.34901960784313724" blue="0.74901960784313726" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="ZJr-Wh-eui" secondAttribute="bottom" id="GO3-2s-KjN"/>
                                 <constraint firstItem="ZJr-Wh-eui" firstAttribute="top" secondItem="Gin-Sq-T9f" secondAttribute="top" id="aGb-06-1ei"/>

@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  CardSample
-//
-//  Created by Alina Zaitseva on 8/14/18.
-//  Copyright © 2018 Alina Zaitseva. All rights reserved.
-//
-
 import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate  {
@@ -26,6 +18,7 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     var cardNumber = ""
     var expireDate: String?
     var cvv: String?
+    var numberOfCard: CardNumber!
     
     var isSlashAdded = false
     
@@ -41,6 +34,7 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        numberOfCard = CardNumber()
         setTextFieldsDelegate()
     }
     // MARK: Function to appoint delegate for TextField
@@ -52,7 +46,7 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     //MARK: Appoint color and border radius to TextField
     
     func setDefaultBorderColor(for textField: UITextField) {
-        textField.setAppropriateLookWith(color: #colorLiteral(red: 0.9411764706, green: 0.9411764706, blue: 0.9411764706, alpha: 1))
+        textField.setAppropriateLookWith(color: #colorLiteral(red: 0.9176470588, green: 0.9176470588, blue: 0.9176470588, alpha: 1))
     }
     
     // MARK: Function to validate amount of symbols in TextField
@@ -62,7 +56,7 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         let characterSet = CharacterSet(charactersIn: string)
         return allowedCharacters.isSuperset(of: characterSet)
     }
-     // MARK: Function to validate amount of numbers in TextField
+    // MARK: Function to validate amount of numbers in TextField
     
     private func numbersValidate (_ string: String) -> Bool {
         let allowedCharacters = CharacterSet.letters
@@ -106,7 +100,7 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         return lengthValidate && isValidationDone
     }
     
-   //MARK: TextField validation checking
+    //MARK: TextField validation checking
     
     var isValid: Bool {
         
@@ -121,7 +115,9 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         let thirdCardNumber = thirdCardNumberTextField.text?.count
         let fourthCardNumber = fourthCardNumberTextField.text?.count
         
-        if cvvCode == cvvLimit, expireDate == dataSymbolsLimit, cardNumber.count == amountOfCardNumbers {
+        if cvvCode == cvvLimit,
+            expireDate == dataSymbolsLimit,
+            numberOfCard.cardNumber != nil {
             return true
         } else {
             if securityCode! < cvvLimit  {
@@ -130,21 +126,19 @@ class ViewController: UIViewController, UITextFieldDelegate  {
             if expireDate! < dataSymbolsLimit {
                 expireDateTextField.setAppropriateLookWith(color: .red)
             } else {
-                expireDateTextField.setAppropriateLookWith(color: #colorLiteral(red: 0.9411764706, green: 0.9411764706, blue: 0.9411764706, alpha: 1))
+                expireDateTextField.setAppropriateLookWith(color: #colorLiteral(red: 0.9176470588, green: 0.9176470588, blue: 0.9176470588, alpha: 1) )
             }
-            if cardNumber.count <= amountOfCardNumbers {
-                if firstCardNumber! < cardNumberLimit {
-                    firstCardNumberTextField.setAppropriateLookWith(color: .red)
-                }
-                if secondCardNumber! < cardNumberLimit {
-                    secondCardNumberTextField.setAppropriateLookWith(color: .red)
-                }
-                if thirdCardNumber! < cardNumberLimit {
-                    thirdCardNumberTextField.setAppropriateLookWith(color: .red)
-                }
-                if fourthCardNumber! < cardNumberLimit {
-                    fourthCardNumberTextField.setAppropriateLookWith(color: .red)
-                }
+            if firstCardNumber! < cardNumberLimit {
+                firstCardNumberTextField.setAppropriateLookWith(color: .red)
+            }
+            if secondCardNumber! < cardNumberLimit {
+                secondCardNumberTextField.setAppropriateLookWith(color: .red)
+            }
+            if thirdCardNumber! < cardNumberLimit {
+                thirdCardNumberTextField.setAppropriateLookWith(color: .red)
+            }
+            if fourthCardNumber! < cardNumberLimit {
+                fourthCardNumberTextField.setAppropriateLookWith(color: .red)
             }
         }
         return false
@@ -186,7 +180,6 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     
     @IBAction func editingCardNumber(_ sender: UITextField) {
         if (sender.text?.count)! == cardNumberLimit {
-            cardNumber += sender.text!
             switch sender {
             case firstCardNumberTextField :
                 secondCardNumberTextField.isEnabled = true
@@ -202,10 +195,28 @@ class ViewController: UIViewController, UITextFieldDelegate  {
             default:
                 break
             }
+            
         }
     }
     
- 
+    // MARK: Output data from CARD NUMBER TextField
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        let text = textField.text
+        switch textField {
+        case firstCardNumberTextField:
+            numberOfCard.first = text!
+        case secondCardNumberTextField:
+            numberOfCard.second = text!
+        case thirdCardNumberTextField:
+            numberOfCard.third = text!
+        case fourthCardNumberTextField:
+            numberOfCard.fourth = text!
+        default:
+            break
+        }
+    }
+    
     // MARK: Action for pushed ADD CARD button
     
     @IBAction func pushedAddCard(_ sender: UIButton) {
@@ -213,28 +224,29 @@ class ViewController: UIViewController, UITextFieldDelegate  {
             guard let expireDate = expireDate, let cvv = cvv else { return }
             creditCard = CardEntity(
                 name: name,
-                cardNumber: cardNumber,
+                cardNumber: numberOfCard.cardNumber!,
                 expireDate: expireDate,
                 cvv: cvv)
             
             self.showAlert(title: "Credit card", message: (creditCard?.Decodable)!)
         } else {
             if cvv?.count == cvvLimit {
-                cvvTextField.setAppropriateLookWith(color: #colorLiteral(red: 0.9411764706, green: 0.9411764706, blue: 0.9411764706, alpha: 1))
+                cvvTextField.setAppropriateLookWith(color: #colorLiteral(red: 0.9176470588, green: 0.9176470588, blue: 0.9176470588, alpha: 1))
             }
             self.showAlert(title: "Error", message: ValidationError.dataIsAbsent.localizedDescription)
         }
         
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    private func textFieldShouldReturn(_ textField: UITextField) {
         textField.resignFirstResponder()
-        return true
     }
     
-    func textFieldShouldBecome(_ textField: UITextField) -> Bool {
+    private func textFieldShouldBecome(_ textField: UITextField) {
         textField.becomeFirstResponder()
-        return true
     }
-
+    
 }
+
+
+

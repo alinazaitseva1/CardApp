@@ -17,6 +17,7 @@
 		CEB414512125B379004E373A /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB414502125B379004E373A /* ViewControllerExtension.swift */; };
 		CEB414562126D69D004E373A /* DateValidatorRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB414552126D69D004E373A /* DateValidatorRules.swift */; };
 		CEB414582126FA48004E373A /* CardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB414572126FA48004E373A /* CardEntity.swift */; };
+		CEEE5CD42137F01D00B44535 /* CardNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEE5CD32137F01D00B44535 /* CardNumber.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		CEB414502125B379004E373A /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		CEB414552126D69D004E373A /* DateValidatorRules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateValidatorRules.swift; sourceTree = "<group>"; };
 		CEB414572126FA48004E373A /* CardEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardEntity.swift; sourceTree = "<group>"; };
+		CEEE5CD32137F01D00B44535 /* CardNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardNumber.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			children = (
 				CEB414552126D69D004E373A /* DateValidatorRules.swift */,
 				CEB414572126FA48004E373A /* CardEntity.swift */,
+				CEEE5CD32137F01D00B44535 /* CardNumber.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				C70EC7E3213729180056DF97 /* TextFieldExtension.swift in Sources */,
 				CEB414512125B379004E373A /* ViewControllerExtension.swift in Sources */,
 				CE5A78D82122E0EA00D36B8A /* ViewController.swift in Sources */,
+				CEEE5CD42137F01D00B44535 /* CardNumber.swift in Sources */,
 				CE5A78D62122E0EA00D36B8A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

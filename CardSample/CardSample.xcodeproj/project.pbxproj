@@ -15,7 +15,6 @@
 		CE5A78E32122E10E00D36B8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE5A78E12122E10E00D36B8A /* LaunchScreen.storyboard */; };
 		CEB4144C2125B11B004E373A /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB4144B2125B11B004E373A /* ValidationError.swift */; };
 		CEB414512125B379004E373A /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB414502125B379004E373A /* ViewControllerExtension.swift */; };
-		CEB414562126D69D004E373A /* DateValidatorRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB414552126D69D004E373A /* DateValidatorRules.swift */; };
 		CEB414582126FA48004E373A /* CardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB414572126FA48004E373A /* CardEntity.swift */; };
 		CEEE5CD42137F01D00B44535 /* CardNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEE5CD32137F01D00B44535 /* CardNumber.swift */; };
 /* End PBXBuildFile section */
@@ -31,7 +30,6 @@
 		CE5A78E42122E10E00D36B8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEB4144B2125B11B004E373A /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 		CEB414502125B379004E373A /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
-		CEB414552126D69D004E373A /* DateValidatorRules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateValidatorRules.swift; sourceTree = "<group>"; };
 		CEB414572126FA48004E373A /* CardEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardEntity.swift; sourceTree = "<group>"; };
 		CEEE5CD32137F01D00B44535 /* CardNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardNumber.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,7 +88,6 @@
 		CE5A78EB2122E15D00D36B8A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CEB414552126D69D004E373A /* DateValidatorRules.swift */,
 				CEB414572126FA48004E373A /* CardEntity.swift */,
 				CEEE5CD32137F01D00B44535 /* CardNumber.swift */,
 			);
@@ -194,7 +191,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEB4144C2125B11B004E373A /* ValidationError.swift in Sources */,
-				CEB414562126D69D004E373A /* DateValidatorRules.swift in Sources */,
 				CEB414582126FA48004E373A /* CardEntity.swift in Sources */,
 				C70EC7E3213729180056DF97 /* TextFieldExtension.swift in Sources */,
 				CEB414512125B379004E373A /* ViewControllerExtension.swift in Sources */,

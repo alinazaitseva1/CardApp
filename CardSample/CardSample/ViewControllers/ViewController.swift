@@ -3,9 +3,8 @@ import UIKit
 class ViewController: UIViewController, UITextFieldDelegate  {
     
     @IBOutlet weak var nameOnCardTextField: UITextField!
-    @IBOutlet weak var expireDateTextField: UITextField!
     @IBOutlet weak var cvvTextField: UITextField!
-    
+    @IBOutlet weak var expireDateTextField: UITextField!
     @IBOutlet weak var firstCardNumberTextField: UITextField!
     @IBOutlet weak var secondCardNumberTextField: UITextField!
     @IBOutlet weak var thirdCardNumberTextField: UITextField!
@@ -63,6 +62,16 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         let characterSet = CharacterSet(charactersIn: string)
         return allowedCharacters.isSuperset(of: characterSet)
     }
+    
+    //MARK: Function to validate expire date
+    
+    func validate(string: String) -> Bool {
+        
+        let regex = try! NSRegularExpression(pattern: "^(0[1-9]|1[0-2])\\/?([0-9]{4}|[0-9]{2})$")
+        
+        return regex.firstMatch(in: string, options: [], range: NSMakeRange(0, string.count)) != nil
+    }
+
     
     //MARK: Function to validate symbols amount in TextFields
     
@@ -138,7 +147,12 @@ class ViewController: UIViewController, UITextFieldDelegate  {
             if fourthCardNumber! < cardNumberLimit {
                 fourthCardNumberTextField.setAppropriateLookWith(color: .red)
             }
+           
         }
+        if !validate(string: self.expireDate!) {
+            cvvTextField.setAppropriateLookWith(color: .red)
+        }
+        
         return false
     }
     
@@ -193,7 +207,6 @@ class ViewController: UIViewController, UITextFieldDelegate  {
             default:
                 break
             }
-            
         }
     }
     

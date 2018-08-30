@@ -9,7 +9,6 @@
 import Foundation
 
 struct CardEntity {
-    
     var name: String?
     var cardNumber: String
     var expireDate: String

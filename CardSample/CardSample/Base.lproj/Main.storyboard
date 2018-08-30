@@ -48,7 +48,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="82" height="40"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                         <connections>
                                             <action selector="editingCardNumber:" destination="BYZ-38-t0r" eventType="editingChanged" id="I33-8R-E9y"/>
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="f7D-FS-c2I"/>
@@ -58,7 +58,7 @@
                                         <rect key="frame" x="87" y="0.0" width="82" height="40"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                         <connections>
                                             <action selector="editingCardNumber:" destination="BYZ-38-t0r" eventType="editingChanged" id="WRx-4M-x5f"/>
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="dXV-IE-Mma"/>
@@ -68,7 +68,7 @@
                                         <rect key="frame" x="174" y="0.0" width="82" height="40"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                         <connections>
                                             <action selector="editingCardNumber:" destination="BYZ-38-t0r" eventType="editingChanged" id="Hs3-bg-2TY"/>
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="wiR-Aw-EnN"/>
@@ -78,7 +78,7 @@
                                         <rect key="frame" x="261" y="0.0" width="82" height="40"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                         <connections>
                                             <action selector="editingCardNumber:" destination="BYZ-38-t0r" eventType="editingChanged" id="EuW-M6-jFG"/>
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="WVY-IM-RNG"/>
@@ -112,20 +112,21 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I8K-mm-AhL">
                                 <rect key="frame" x="16" y="326" width="343" height="40"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="MM/YY" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kAz-Ju-Dvg" customClass="ExpireDateTextField" customModule="CardSample" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="MM/YY" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zw1-hr-2Px">
                                         <rect key="frame" x="0.0" y="0.0" width="167.5" height="40"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                         <connections>
-                                            <action selector="editingTextField:" destination="BYZ-38-t0r" eventType="editingChanged" id="ZKG-SI-gei"/>
+                                            <action selector="editingTextField:" destination="BYZ-38-t0r" eventType="editingChanged" id="4GL-ot-S1u"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="37J-vO-VaF"/>
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="***" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gwX-8b-H2u">
                                         <rect key="frame" x="175.5" y="0.0" width="167.5" height="40"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
                                         <connections>
                                             <action selector="editingTextField:" destination="BYZ-38-t0r" eventType="editingChanged" id="ibB-DK-whN"/>
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="i38-vc-kRm"/>
@@ -137,7 +138,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hm9-Ba-qYQ">
-                                <rect key="frame" x="110" y="439" width="155" height="40"/>
+                                <rect key="frame" x="110" y="396" width="155" height="40"/>
                                 <color key="backgroundColor" red="0.29019607843137257" green="0.29411764705882354" blue="0.70980392156862748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Ymh-a5-OHv"/>
@@ -169,7 +170,7 @@
                             <constraint firstItem="7lf-rR-WqU" firstAttribute="top" secondItem="seB-D9-a39" secondAttribute="bottom" constant="20" id="eGP-ug-qx7"/>
                             <constraint firstItem="seB-D9-a39" firstAttribute="top" secondItem="mct-Go-X23" secondAttribute="bottom" constant="20" id="lvZ-Dw-uvA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7lf-rR-WqU" secondAttribute="trailing" constant="16" id="rSW-rD-gHa"/>
-                            <constraint firstItem="hm9-Ba-qYQ" firstAttribute="top" secondItem="I8K-mm-AhL" secondAttribute="bottom" constant="73" id="ua9-VN-8Rk"/>
+                            <constraint firstItem="hm9-Ba-qYQ" firstAttribute="top" secondItem="I8K-mm-AhL" secondAttribute="bottom" constant="30" id="ua9-VN-8Rk"/>
                             <constraint firstItem="I8K-mm-AhL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="vSk-ZL-Y0b"/>
                             <constraint firstItem="seB-D9-a39" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="zqV-hh-gUT"/>
                         </constraints>
@@ -201,7 +202,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="cvvTextField" destination="gwX-8b-H2u" id="msV-nt-LQ2"/>
-                        <outlet property="expireDateTextField" destination="kAz-Ju-Dvg" id="ckR-hh-ca2"/>
+                        <outlet property="expireDateTextField" destination="Zw1-hr-2Px" id="M0C-OM-87J"/>
                         <outlet property="firstCardNumberTextField" destination="kkg-fb-Rcu" id="avs-ao-yPZ"/>
                         <outlet property="fourthCardNumberTextField" destination="jMh-kU-QYf" id="oVW-Qj-gAH"/>
                         <outlet property="nameOnCardTextField" destination="iD2-bu-v5r" id="dIv-3D-Q8S"/>

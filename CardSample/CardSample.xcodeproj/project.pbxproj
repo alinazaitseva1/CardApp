@@ -7,31 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C70EC7E3213729180056DF97 /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70EC7E2213729180056DF97 /* TextFieldExtension.swift */; };
 		CE5A78D62122E0EA00D36B8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A78D52122E0EA00D36B8A /* AppDelegate.swift */; };
 		CE5A78D82122E0EA00D36B8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A78D72122E0EA00D36B8A /* ViewController.swift */; };
 		CE5A78DB2122E0EA00D36B8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE5A78D92122E0EA00D36B8A /* Main.storyboard */; };
-		CE5A78DE2122E0EA00D36B8A /* CardSample.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE5A78DC2122E0EA00D36B8A /* CardSample.xcdatamodeld */; };
 		CE5A78E02122E10E00D36B8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE5A78DF2122E10E00D36B8A /* Assets.xcassets */; };
 		CE5A78E32122E10E00D36B8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE5A78E12122E10E00D36B8A /* LaunchScreen.storyboard */; };
-		CEB4144C2125B11B004E373A /* TypeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB4144B2125B11B004E373A /* TypeError.swift */; };
+		CEB4144C2125B11B004E373A /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB4144B2125B11B004E373A /* ValidationError.swift */; };
 		CEB414512125B379004E373A /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB414502125B379004E373A /* ViewControllerExtension.swift */; };
-		CEB414562126D69D004E373A /* DateValidatorRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB414552126D69D004E373A /* DateValidatorRules.swift */; };
 		CEB414582126FA48004E373A /* CardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB414572126FA48004E373A /* CardEntity.swift */; };
+		CEEE5CD42137F01D00B44535 /* CardNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEE5CD32137F01D00B44535 /* CardNumber.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C70EC7E2213729180056DF97 /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
 		CE5A78D22122E0EA00D36B8A /* CardSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE5A78D52122E0EA00D36B8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE5A78D72122E0EA00D36B8A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CE5A78DA2122E0EA00D36B8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CE5A78DD2122E0EA00D36B8A /* CardSample.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CardSample.xcdatamodel; sourceTree = "<group>"; };
 		CE5A78DF2122E10E00D36B8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE5A78E22122E10E00D36B8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE5A78E42122E10E00D36B8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CEB4144B2125B11B004E373A /* TypeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeError.swift; sourceTree = "<group>"; };
+		CEB4144B2125B11B004E373A /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 		CEB414502125B379004E373A /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
-		CEB414552126D69D004E373A /* DateValidatorRules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateValidatorRules.swift; sourceTree = "<group>"; };
 		CEB414572126FA48004E373A /* CardEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardEntity.swift; sourceTree = "<group>"; };
+		CEEE5CD32137F01D00B44535 /* CardNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardNumber.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +71,6 @@
 				CE5A78EA2122E12000D36B8A /* Supporting files */,
 				CE5A78D92122E0EA00D36B8A /* Main.storyboard */,
 				CE5A78E42122E10E00D36B8A /* Info.plist */,
-				CE5A78DC2122E0EA00D36B8A /* CardSample.xcdatamodeld */,
 			);
 			path = CardSample;
 			sourceTree = "<group>";
@@ -90,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				CEB414572126FA48004E373A /* CardEntity.swift */,
+				CEEE5CD32137F01D00B44535 /* CardNumber.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -105,8 +105,7 @@
 		CEB4144A2125B0B7004E373A /* Enums */ = {
 			isa = PBXGroup;
 			children = (
-				CEB4144B2125B11B004E373A /* TypeError.swift */,
-				CEB414552126D69D004E373A /* DateValidatorRules.swift */,
+				CEB4144B2125B11B004E373A /* ValidationError.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -115,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				CEB414502125B379004E373A /* ViewControllerExtension.swift */,
+				C70EC7E2213729180056DF97 /* TextFieldExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -190,12 +190,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEB4144C2125B11B004E373A /* TypeError.swift in Sources */,
-				CEB414562126D69D004E373A /* DateValidatorRules.swift in Sources */,
+				CEB4144C2125B11B004E373A /* ValidationError.swift in Sources */,
 				CEB414582126FA48004E373A /* CardEntity.swift in Sources */,
+				C70EC7E3213729180056DF97 /* TextFieldExtension.swift in Sources */,
 				CEB414512125B379004E373A /* ViewControllerExtension.swift in Sources */,
-				CE5A78DE2122E0EA00D36B8A /* CardSample.xcdatamodeld in Sources */,
 				CE5A78D82122E0EA00D36B8A /* ViewController.swift in Sources */,
+				CEEE5CD42137F01D00B44535 /* CardNumber.swift in Sources */,
 				CE5A78D62122E0EA00D36B8A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,7 +347,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "-.CardSample";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ios.cardSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -365,7 +365,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "-.CardSample";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ios.cardSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -394,19 +394,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		CE5A78DC2122E0EA00D36B8A /* CardSample.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				CE5A78DD2122E0EA00D36B8A /* CardSample.xcdatamodel */,
-			);
-			currentVersion = CE5A78DD2122E0EA00D36B8A /* CardSample.xcdatamodel */;
-			path = CardSample.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = CE5A78CA2122E0EA00D36B8A /* Project object */;
 }

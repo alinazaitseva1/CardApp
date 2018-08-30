@@ -8,13 +8,13 @@
 
 import Foundation
 
-enum TypeError: Error {
+enum ValidationError: Error {
     case dataIsAbsent
     
     var localizedDescription: String {
         switch self {
         case .dataIsAbsent:
-            return "Required fields cannot be left blank"
+            return NSLocalizedString("Required data are not valid", comment: "All fields should be filled in and should be valid")
         }
     }
 }

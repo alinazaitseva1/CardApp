@@ -66,8 +66,6 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     
     //MARK: Function to validate symbols amount in TextFields
     
-    
-    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         setDefaultBorderColor(for: textField)
         
@@ -247,6 +245,4 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     }
     
 }
-
-
 

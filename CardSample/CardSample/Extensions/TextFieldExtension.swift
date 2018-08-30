@@ -17,3 +17,21 @@ extension UITextField {
     }
 }
 
+extension UITextField {
+    func addCancelToolbar( onCancel: (target: Any, action: Selector)? = nil) {
+        let onCancel = onCancel ?? (target: self, action: #selector(cancelButtonTapped))
+        
+        let toolbar: UIToolbar = UIToolbar()
+        toolbar.barStyle = .default
+        toolbar.items = [
+            UIBarButtonItem(title: "Cancel", style: .plain, target: onCancel.target, action: onCancel.action),
+            UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil),
+        ]
+        toolbar.sizeToFit()
+        
+        self.inputAccessoryView = toolbar
+    }
+    
+    // Default actions:
+    @objc func cancelButtonTapped() { self.resignFirstResponder() }
+}

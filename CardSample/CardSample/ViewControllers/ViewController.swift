@@ -4,11 +4,21 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     
     @IBOutlet weak var nameOnCardTextField: UITextField!
     @IBOutlet weak var cvvTextField: UITextField!
-    @IBOutlet weak var expireDateTextField: UITextField!
-    @IBOutlet weak var firstCardNumberTextField: UITextField!
-    @IBOutlet weak var secondCardNumberTextField: UITextField!
-    @IBOutlet weak var thirdCardNumberTextField: UITextField!
-    @IBOutlet weak var fourthCardNumberTextField: UITextField!
+    @IBOutlet weak var expireDateTextField: UITextField! {
+        didSet { expireDateTextField?.addCancelToolbar() }
+    }
+    @IBOutlet weak var firstCardNumberTextField: UITextField! {
+        didSet { firstCardNumberTextField?.addCancelToolbar() }
+    }
+    @IBOutlet weak var secondCardNumberTextField: UITextField! {
+        didSet { secondCardNumberTextField?.addCancelToolbar() }
+    }
+    @IBOutlet weak var thirdCardNumberTextField: UITextField! {
+        didSet { thirdCardNumberTextField?.addCancelToolbar() }
+    }
+    @IBOutlet weak var fourthCardNumberTextField: UITextField! {
+        didSet { fourthCardNumberTextField?.addCancelToolbar() }
+    }
     
     // MARK: Properties for CardEntity data
     

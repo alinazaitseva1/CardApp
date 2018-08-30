@@ -14,7 +14,7 @@ enum ValidationError: Error {
     var localizedDescription: String {
         switch self {
         case .dataIsAbsent:
-            return NSLocalizedString("Required fields cannot be left blank", comment: "All fields should be filled in")
+            return NSLocalizedString("Required data are not valid", comment: "All fields should be filled in and should be valid")
         }
     }
 }

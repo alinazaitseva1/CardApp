@@ -34,14 +34,8 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     override func viewDidLoad() {
         super.viewDidLoad()
         numberOfCard = CardNumber()
-        setTextFieldsDelegate()
     }
-    // MARK: Function to appoint delegate for TextField
-    
-    fileprivate func setTextFieldsDelegate() {
-        expireDateTextField.delegate = self
-    }
-    
+
     //MARK: Appoint color and border radius to TextField
     
     func setDefaultBorderColor(for textField: UITextField) {
@@ -68,10 +62,9 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     func validate(string: String) -> Bool {
         
         let regex = try! NSRegularExpression(pattern: "^(0[1-9]|1[0-2])\\/?([0-9]{4}|[0-9]{2})$")
-        
         return regex.firstMatch(in: string, options: [], range: NSMakeRange(0, string.count)) != nil
     }
-
+    
     
     //MARK: Function to validate symbols amount in TextFields
     
@@ -107,7 +100,7 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         return lengthValidate && isValidationDone
     }
     
-    //MARK: TextField validation checking
+    //MARK: TextFields checking
     
     var isValid: Bool {
         
@@ -123,6 +116,7 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         let fourthCardNumber = fourthCardNumberTextField.text?.count
         
         if cvvCode == cvvLimit,
+            validate(string: self.expireDate!),
             expireDate == dataSymbolsLimit,
             numberOfCard.cardNumber != nil {
             return true
@@ -147,7 +141,7 @@ class ViewController: UIViewController, UITextFieldDelegate  {
             if fourthCardNumber! < cardNumberLimit {
                 fourthCardNumberTextField.setAppropriateLookWith(color: .red)
             }
-           
+            
         }
         if !validate(string: self.expireDate!) {
             cvvTextField.setAppropriateLookWith(color: .red)
@@ -248,10 +242,14 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         }
         
     }
+    // MARK: Function for hiding keyboard by pressing return button
     
-    private func textFieldShouldReturn(_ textField: UITextField) {
-        textField.resignFirstResponder()
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
+    
+     // MARK: Function to put backslash to next field
     
     private func textFieldShouldBecome(_ textField: UITextField) {
         textField.becomeFirstResponder()

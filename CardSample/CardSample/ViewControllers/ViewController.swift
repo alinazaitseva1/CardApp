@@ -45,7 +45,7 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         super.viewDidLoad()
         numberOfCard = CardNumber()
     }
-
+    
     //MARK: Appoint color and border radius to TextField
     
     func setDefaultBorderColor(for textField: UITextField) {
@@ -151,12 +151,10 @@ class ViewController: UIViewController, UITextFieldDelegate  {
             if fourthCardNumber! < cardNumberLimit {
                 fourthCardNumberTextField.setAppropriateLookWith(color: .red)
             }
-            
         }
         if !validate(string: self.expireDate!) {
-            cvvTextField.setAppropriateLookWith(color: .red)
+            expireDateTextField.setAppropriateLookWith(color: .red)
         }
-        
         return false
     }
     
@@ -259,7 +257,7 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         return false
     }
     
-     // MARK: Function to put backslash to next field
+    // MARK: Function to put backslash to next field
     
     private func textFieldShouldBecome(_ textField: UITextField) {
         textField.becomeFirstResponder()

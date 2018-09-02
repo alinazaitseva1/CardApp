@@ -152,9 +152,8 @@ class ViewController: UIViewController, UITextFieldDelegate  {
                 fourthCardNumberTextField.setAppropriateLookWith(color: .red)
             }
         }
-        if !validate(string: self.expireDate!) {
-            expireDateTextField.setAppropriateLookWith(color: .red)
-        }
+        if let expireDate = self.expireDate, !validate(string: self.expireDate!) {
+            expireDateTextField.setAppropriateLookWith(color: .red)}
         return false
     }
     
